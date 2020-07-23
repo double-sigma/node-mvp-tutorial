@@ -14,4 +14,5 @@ router.post('/lead/:lead_id/delete', landing.delete_lead);
 router.post('/lead/:lead_id/delete-json', landing.delete_lead_json);
 module.exports = router;
 
-// 1:08
+// https://www.youtube.com/watch?v=G8uL0lFFoN0&t=1872s
+// 1:24
