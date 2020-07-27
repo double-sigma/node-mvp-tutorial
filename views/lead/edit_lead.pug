@@ -1,6 +1,17 @@
-extends ../layout
-
-block content
-  form(action="/lead/" + lead.id + "/edit", method="POST")
-    input(name="lead_email", type="email", placeholder="Enter email", value=lead.email)
-    button(type="submit") Save
+doctype html
+html(lang='en')
+  include ../common/head.pug
+  +head("Starter MVP")
+  body
+    header
+      include ../common/navbar.pug
+      +navbar()
+      .container
+        .row.align-items-center
+          form(action="/lead/" + lead.id + "/edit", method="POST")
+            .input-group.mb-3
+              input(name="lead_email", type="email", placeholder="Enter email", value=lead.email).form-control
+              .input-group-append
+                button(type="submit").btn.btn-primary Save
+  include ../common/footer.pug
+  +footer()
