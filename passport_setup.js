@@ -2,6 +2,7 @@ let LocalStrategy = require('passport-local').Strategy;
 
 let bcrypt = require('bcrypt');
 let models = require('./models');
+let flash = require('connect-flash')
 const passport = require('passport');
 
 const validPassword = function(user, password) {
@@ -29,7 +30,7 @@ module.exports = function(passport) {
     passport.use(new LocalStrategy({
         usernameField: 'email',
         passwordField: 'password',
-        passReqToCallback: true
+        passReqToCallback : true
     },
     function(req, email, password, done){
         return models.User.findOne({
